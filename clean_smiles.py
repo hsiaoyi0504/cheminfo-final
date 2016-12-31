@@ -3,7 +3,7 @@ import csv
 
 structures = []
 solubility = []
-f = open('solubility_all.csv', 'r')  
+f = open('./data/solubility_all.csv', 'r')  
 for row in csv.reader(f):  
     m = Chem.MolFromSmiles(row[0])
     if m is None:
@@ -22,7 +22,7 @@ for item in canonical:
 zipped = zip(canonical,new_solubility)
 
 
-f = open('total.csv', 'wb')
+f = open('./data/total.csv', 'wb')
 for row in zipped:
     for column in row:
         f.write('%s;' % column)
