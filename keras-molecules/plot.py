@@ -44,7 +44,7 @@ def visualize_model(args):
 def plot_2d(args):
     data = np.loadtxt(args.data, delimiter='\t')
     figure(figsize=(6, 6))
-    scatter(data[:, 0], data[:, 1], marker = '.', linewidth = '0', s = 0.2)
+    scatter(data[:, 1], data[:, 3], marker = '.', linewidth = '0', s = 0.2)
     savefig(args.outfile, bbox_inches = 'tight')
 
 def main():

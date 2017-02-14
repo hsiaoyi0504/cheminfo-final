@@ -11,6 +11,7 @@ python sample.py data/processed_zinc12_250k.h5 data/model_zinc12_250k_batch_300.
 cd ..
 python clean_solubility_dataset.py
 python csv_to_hdf5.py
-cd keras_molecukes
+cd keras_molecules
 python sample.py ../data/processed_solubility.h5 data/model_zinc12_250k_batch_300.h5 --target encoder >> ../data/solubility_encoded.txt
-
+python interpolate.py data/processed_zinc12_250k.h5 data/model_zinc12_250k_batch_300.h5 --source "CC=C(C(=CC)c1ccc(O)cc1)c1ccc(O)cc1" --dest "CN1C(=O)CCS(=O)(=O)C1c1ccc(Cl)cc1" >> data/interpolated.txt
+cd ..
